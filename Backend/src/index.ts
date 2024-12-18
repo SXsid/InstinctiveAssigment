@@ -1,6 +1,6 @@
 import express from "express"
 import  cors from "cors"
-import studRouter from "./Routes/stud"
+import studRouter from "./Routes/student"
 const app = express()
 app.use(cors())
 app.use(express.json())

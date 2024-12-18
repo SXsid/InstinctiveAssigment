@@ -16,7 +16,7 @@ model Student{
   name           String
   cohort         String
   courses        Json
-  joined_date    DateTime  @default(now())
+  joined_date    String     
   last_login     DateTime   @default(now())
   status         Boolean    @default(false)
 }    

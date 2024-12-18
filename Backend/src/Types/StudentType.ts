@@ -1,4 +1,4 @@
-import z, { string } from "zod"
+import z from "zod"
 
 export const addSchema = z.object({
     name:z.string(),
@@ -8,7 +8,8 @@ export const addSchema = z.object({
         z.object({
             name:z.string()
         })
-    )
+    ),
+    joined_date:z.string()
 
 })
 export const UpdateSchema = z.object({
@@ -20,6 +21,7 @@ export const UpdateSchema = z.object({
             name:z.string()
         })
     ).optional()
+    , joined_date:z.string().optional()
 
 })
 
