@@ -10,6 +10,10 @@ export default {
         "greybg":"#EEEEEE",
         "greytext":" #6F767E",
         "customBlue":"#05162E",
+        "greySelect":'#3F526E',
+        "selectBG":"#E9EDF1",
+        "greyDivide":"EAEAEA",
+        "greyCourse":"#F6f8FA",
 
         "customBlack":"#0A0A0A"
 

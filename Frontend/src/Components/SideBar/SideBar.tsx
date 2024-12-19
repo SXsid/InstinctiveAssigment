@@ -1,7 +1,7 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { useState } from "react";
 import Logo from "../../assets/Logo.svg";
-import { Dashboard, Help, Student, Setting, Reports, Chapter,Hamburger } from "../../Svg/index";
+import { Dashboard, Help, StudentSVG, Setting, Reports, Chapter,Hamburger } from "../../Svg/index";
 
 
 function SideBar() {
@@ -10,7 +10,7 @@ function SideBar() {
 
   const data = [
     { name: "Dashboard", path: "/", svg: (isActive:boolean) => <Dashboard color={isActive ? "#000000" : "#6F767E"} /> },
-    { name: "Student", path: "/student", svg: (isActive:boolean) => <Student color={isActive ? "#000000" : "#6F767E"} /> },
+    { name: "Student", path: "/student", svg: (isActive:boolean) => <StudentSVG color={isActive ? "#000000" : "#6F767E"} /> },
     { name: "Chapter", path: "/chapter", svg: (isActive:boolean) => <Chapter color={isActive ? "#000000" : "#6F767E"} /> },
     { name: "Help", path: "/help", svg: (isActive:boolean) => <Help color={isActive ? "#000000" : "#6F767E"} /> },
     { name: "Reports", path: "/reports", svg: (isActive:boolean) => <Reports color={isActive ? "#000000" : "#6F767E"} /> },
@@ -29,7 +29,7 @@ function SideBar() {
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } lg:translate-x-0`} 
       >
-        <div className="mb-10">
+        <div className="mb-10 mt-3">
           <img src={Logo} alt="Logo" className="w-24" />
         </div>
 
@@ -61,7 +61,7 @@ function SideBar() {
 
      
       <button
-        className="md:hidden absolute top-5 right-6 z-10"
+        className="md:hidden absolute top-8 right-6 z-10"
         onClick={toggleSidebar}
       >
       <Hamburger/>

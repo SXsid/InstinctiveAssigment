@@ -1,4 +1,4 @@
-import SearchSvg from "../../Svg/Search";
+import SearchSvg from "../../Svg/Top/Search";
 
 const SearchComponent = () => {
   return (
