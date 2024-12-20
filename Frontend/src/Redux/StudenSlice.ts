@@ -5,7 +5,7 @@ import { addUserProp, AllStudentProp, DeleteStudnet, SingleStudentProp, UpdateHa
 export const studentSlice = createApi({
     reducerPath:"dataFetching",
     baseQuery:fetchBaseQuery({
-        baseUrl:"http://localhost:3000/student"
+        baseUrl:"https://instinctiveassigment-production.up.railway.app/student/"
     }),
     tagTypes:["All-Students"],
     endpoints:(builder)=>{

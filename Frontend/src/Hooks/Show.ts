@@ -12,7 +12,7 @@ const dispatch= useDispatch<AppDispatch>()
       try {
         dispatch(setloading(true))
         dispatch(setError(""))
-        const res = await fetch(`http://localhost:3000/student/${id}`);
+        const res = await fetch(`https://instinctiveassigment-production.up.railway.app/student/${id}`);
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`)
         }
