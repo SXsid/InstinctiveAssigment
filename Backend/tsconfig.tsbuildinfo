@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/controllers/studentcontrollers.ts","./src/routes/student.ts","./src/services/studentservices.ts","./src/types/studenttype.ts"],"version":"5.7.2"}
