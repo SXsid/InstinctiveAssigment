@@ -1,7 +1,8 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import { ErrorComp, SideBar, WaitingComp } from "./Components"
-import Student from "./Pages/Student"
-
+import { Provider } from "react-redux"
+import {Student,Add,Update,Show} from "./Pages/index"
+import { StudentStore } from "./Redux/Store/Store"
 
 function App() {
   const routes = createBrowserRouter([
@@ -15,7 +16,13 @@ function App() {
           element:<WaitingComp/>
         },{
           path:"/student",
-          element:<Student/>
+          element:<Student/>,
+          children:[
+            {
+              path:"/student/:id",
+              element:<Show/>
+            }
+          ]
         },{
           path:"/chapter",
           element:<WaitingComp/>
@@ -28,14 +35,27 @@ function App() {
         },{
           path:"/settings",
           element:<WaitingComp/>
-        }
+        },
+        {
+          path:"/add",
+          element:<Add/>
+          
+        },
+        {
+          path:"/update",
+          element:<Update/>
+          
+        },
       ]
-    }
+      
+    },
+    
+    
   ])
  return(
-  <>
+  <Provider store={StudentStore}>
   <RouterProvider router={routes}></RouterProvider>
-  </>
+  </Provider>
  )
 }
 

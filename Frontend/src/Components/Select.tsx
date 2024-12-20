@@ -13,7 +13,8 @@ interface SelectProp {
         >
           {Options.map((value, index) => (
             <option
-              className="bg-greybg font-sans text-greySelect hover:bg-greytext hover:text-white cursor-pointer"
+            style={{background:"#E9EDF",color:"#3F526E",fontWeight:"bold"}}
+             
               key={index}
               value={value}
             >

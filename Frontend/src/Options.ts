@@ -26,3 +26,13 @@ export const academicYears = [
     "CBSE 12"
   ];
   
+  export const courseOptions = [
+    'English',
+    'Maths',
+    'Science',
+  ];
+
+  export const statusOptions=[
+    "Active",
+    "Inactive"
+  ]

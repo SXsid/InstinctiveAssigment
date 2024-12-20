@@ -1,21 +1,28 @@
 
 import { PrismaClient } from "@prisma/client";
-import {addSchema, AddSchemaType, UpdateSchema, UpdateSchemaType} from "../Types/StudentType"
+import {addSchema, AddSchemaType} from "../Types/StudentType"
 const db= new PrismaClient()
 
 class StudentServices{
     static async CreateUser(payload:AddSchemaType){
-        console.log(payload);
         
-        const {success,error}=addSchema.safeParse(payload)
-        console.log(success,error);
+        
+        const {success}=addSchema.safeParse(payload)
+        
         
         if(!success){
             
             return{success:false,status:400,error:"invlaid inputs"
             }
         }
-        const {name,cohort,courses,status,joined_date}=payload
+        const {name,cohort,subject,class:divison,status,joined_date}=payload
+        const courses=subject.map(value=>{
+          return {
+            name:divison +" "+ value
+          }
+        })
+        //@ts-ignore
+        
         try{
             const data=await db.student.create({
                 data:{
@@ -74,7 +81,10 @@ class StudentServices{
                       id:true
                   }
               })
-              return {success:true,statusCode:200,data}
+              if(data){
+                return {success:true,statusCode:200,data}
+              }
+              return {success:false,statusCode:500,error:"can't retive data at this moment"}
           }catch(e){
               console.error("error by retrive all post ",e)
               return {success:false,statusCode:500,error:"can't retive data at this moment"}
@@ -111,8 +121,8 @@ class StudentServices{
         
     
     
-     static async UpdateStudentById(id: string, payload: UpdateSchemaType){
-            const { success } = UpdateSchema.safeParse(payload);
+     static async UpdateStudentById(id: string, payload: AddSchemaType){
+            const { success } = addSchema.safeParse(payload);
             
             if (!success) {
               return { success: false, statusCode: 400, error: "Invalid inputs" };
@@ -125,10 +135,23 @@ class StudentServices{
               if (!student) {
                 return { success: false, statusCode: 404, error: "Student not found" };
               }
-          
+                const {name,cohort,subject,class:divison,status,joined_date}=payload
+                    const courses=subject.map(value=>{
+                      return {
+                        name:divison +" "+ value
+                      }
+                    })
+                    
               const updatedStudent = await db.student.update({
                 where: { id },
-                data: { ...payload }
+                data: { 
+                  name,
+                  cohort,
+                  courses,
+                  status,
+                  joined_date
+
+                 }
               });
           
               return { success: true, statusCode: 200, data: updatedStudent };

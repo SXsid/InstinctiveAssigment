@@ -25,7 +25,7 @@ function SideBar() {
     <div className="flex h-screen">
       
       <div
-        className={`fixed bg-white pt-8 px-2 w-[248px] h-full  border-r transition-all transform ${
+      className={`fixed bg-white pt-8 px-2 lg:w-[248px] h-full  border-r transition-all transform ${
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         } lg:translate-x-0`} 
       >
@@ -61,14 +61,14 @@ function SideBar() {
 
      
       <button
-        className="md:hidden absolute top-8 right-6 z-10"
+        className="lg:hidden absolute  top-6 right-0 md:right-6 z-10"
         onClick={toggleSidebar}
       >
       <Hamburger/>
       </button>
 
       
-      <div className="flex-1 bg-[#F6F8FA]  ">
+      <div className="flex-1 min-h-screen  ">
         <Outlet />
       </div>
     </div>

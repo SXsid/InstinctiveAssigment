@@ -7,6 +7,9 @@ import Notification from "./Top/Notification";
 import AddButton from "./AddButton";
 import Select from "./Select";
 import Card from "./Card";
+import StudentTable from "./Tabel";
+import Skeleton from "./Skeleton";
+
 
 export{
     ErrorComp,
@@ -17,6 +20,8 @@ export{
     Notification,
     AddButton,
     Select,
-    Card
+    Card,
+    StudentTable,
+    Skeleton
 
 }
