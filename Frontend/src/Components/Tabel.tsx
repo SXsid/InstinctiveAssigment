@@ -45,8 +45,8 @@ const navigate =useNavigate()
  }
 
   return (
-    <div className="w-full  rounded-lg overflow-hidden mt-8 relative">
-      <div className="overflow-x-auto relative">
+    <div className="w-full  rounded-lg overflow-hidden mt-8 ">
+      <div className="overflow-x-auto ">
         <table className="w-full  text-left">
           <thead className="
         

@@ -4,7 +4,7 @@ import StudentFormCard from '../Components/AddCard'
 
 function Add() {
   return (
-    <div>
+    <div className='flex justify-center bg-greyCourse '>
       <StudentFormCard />
     </div>
   )

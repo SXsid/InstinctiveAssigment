@@ -57,9 +57,9 @@ const StudentFormCard = ({student,}: {student?: UpdateStudentProp}) => {
   }
   
   return (
-    <div  className='flex justify-center bg-greyCourse px-12'>
+    <div  className='flex justify-center  items-center h-screen px-12'>
       {errors.root && <div className="text-red-500">{errors.root.message}</div>} 
-      <div className="max-w-lg w-full mt-4 bg-white rounded-lg shadow-md p-6">
+      <div className="max-w-lg w-full mt-4 bg-white rounded-lg shadow-md p-6 ">
         <h2 className="text-xl font-semibold mb-6 text-black ">
           {student ? 'Update Student' : 'Add New Student'}
         </h2>

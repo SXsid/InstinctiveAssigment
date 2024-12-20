@@ -28,7 +28,7 @@ const Student:UpdateStudentProp={
 console.log(Student);
 
   return (
-    <div>
+    <div className='flex justify-center bg-greyCourse px-12'>
       <StudentFormCard student={Student}/>
     </div>
   )
